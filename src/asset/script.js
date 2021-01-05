@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
         label: "Hydraulic Breaker",
         data: [100, 100, 100, 100, 100, 100],
         borderColor: "tomato",
-      }]
+      }],
     },
     options: {
       legend: {
@@ -27,12 +27,15 @@ window.addEventListener('load', () => {
       scales: {
         yAxes: [{
           ticks: {
+            beginAtZero: true,
             callback: function (value) {
               return value + "%";
-            }
-          }
-        }]
-      }
-    }
+            },
+          },
+        }],
+      },
+    },
   });
+
+  document.getElementById('date').innerText = String(new Date().getFullYear());
 });
